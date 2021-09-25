@@ -14,7 +14,7 @@ jobs:
           curl --request POST \
                 --url https://api.github.com/repos/${{ github.repository }}/issues \
                 --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-                --hrader 'content-type: application/json' \
+                --header 'content-type: application/json' \
                 --data '{
                   "title": "Issue created due to workflow failure: ${{ github.run_id }}",
                   "body": "This issue was automatically created by the Github Action workflow **${{ github.workflow }}**. \n\n due to failure in run: _${{ github.run_id }}_."
